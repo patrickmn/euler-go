@@ -31,32 +31,29 @@ func Euler019() {
 	d := 1
 	wd := 1
 	sundaysOnFirst := 0
-	for {
-		if y == 2000 && m == 12 && d == 31 {
-			break
-		}
+	for !(y == 2000 && m == 12 && d == 31) {
 		if wd == 7 {
 			if d == 1 && y > 1900 {
-				sundaysOnFirst += 1
+				sundaysOnFirst++
 			}
 			wd = 1
 		} else {
-			wd += 1
+			wd++
 		}
 		if d >= MonthDays[m] {
 			if m == 2 && IsLeapYear(y) && d == 28 {
-				d += 1
+				d++
 			} else {
 				d = 1
 				if m == 12 {
-					y += 1
+					y++
 					m = 1
 				} else {
-					m += 1
+					m++
 				}
 			}
 		} else {
-			d += 1
+			d++
 		}
 	}
 	result(sundaysOnFirst)
