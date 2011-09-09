@@ -6,8 +6,8 @@ import (
 	"strconv"
 )
 
-func result(x interface{}) {
-	fmt.Print(x)
+func GetString(a interface{}) string {
+        return fmt.Sprintf("%v", a)
 }
 
 func Abs(n int) int {

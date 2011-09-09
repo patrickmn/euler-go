@@ -90,7 +90,7 @@ func main() {
 			error := ""
 			realRes, ok := answers[k]
 			if ok {
-				if fmt.Sprintf("%v", res) != realRes {
+				if GetString(res) != realRes {
 					error = "FAIL"
 				}
 			}
