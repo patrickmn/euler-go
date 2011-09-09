@@ -15,7 +15,7 @@ var showAnswer func(k string)
 
 func main() {
 	// Functions that don't work yet are commented out
-	problemFuncs := map[string]EulerFunc{
+	solutionFuncs := map[string]EulerFunc{
 		"1": Euler001,
 		"2": Euler002,
 		"3": Euler003,
@@ -80,11 +80,11 @@ func main() {
 		"30": "443839",
 	}
 	showAnswer = func(k string) {
-		_, ok := problemFuncs[k]
+		_, ok := solutionFuncs[k]
 		if ok {
 			fmt.Printf("Problem %3s: ", k)
 			startTime := time.Nanoseconds()
-			res := problemFuncs[k]()
+			res := solutionFuncs[k]()
 			endTime := time.Nanoseconds()
 			elapsedms := (endTime - startTime) / 1e6
 			error := ""
@@ -111,7 +111,7 @@ func main() {
 				showAnswer(strconv.Itoa(i))
 			}
 		} else {
-			_, ok := problemFuncs[arg]
+			_, ok := solutionFuncs[arg]
 			if ok {
 				showAnswer(arg)
 			} else {
