@@ -14,7 +14,7 @@ type EulerFunc func() Result
 var showAnswer func(k string)
 
 func main() {
-	// Functions that don̈́'t work yet are commented out
+	// Functions that don't work yet are commented out
 	problemFuncs := map[string]EulerFunc{
 		"1": Euler001,
 		"2": Euler002,
