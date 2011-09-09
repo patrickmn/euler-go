@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func Euler020() {
+func Euler020() Result {
 	z := big.NewInt(100)
 	for i := 100; i > 0; i-- {
 		z = z.Mul(z, big.NewInt(int64(i)))
@@ -15,5 +15,5 @@ func Euler020() {
 		num, _ := strconv.Atoi(string(v))
 		sum += num
 	}
-	result(sum)
+	return sum
 }

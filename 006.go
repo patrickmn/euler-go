@@ -1,6 +1,6 @@
 package main
 
-func Euler006() {
+func Euler006() Result {
 	var (
 		sumNumbers = 0
 		sumSquares = 0
@@ -11,5 +11,5 @@ func Euler006() {
 		sumSquares += num * num
 	}
 	difference = (sumNumbers * sumNumbers) - sumSquares
-	result(difference)
+	return difference
 }

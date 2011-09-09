@@ -19,7 +19,7 @@ func GetNumJumps(num int) int {
 	return jumps
 }
 
-func Euler014() {
+func Euler014() Result {
 	var (
 		longestNum   = 0
 		longestChain = 0
@@ -31,5 +31,5 @@ func Euler014() {
 			longestNum = i
 		}
 	}
-	result(longestNum)
+	return longestNum
 }

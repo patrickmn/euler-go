@@ -20,13 +20,13 @@ func Over500Divisors(n int64) bool {
 	return numFactors > 500
 }
 
-func Euler012() {
+func Euler012() Result {
 	num := int64(0)
 	for i := int64(1); ; i++ {
 		num += i
 		if Over500Divisors(num) {
-			result(num)
-			return
+			return num
 		}
 	}
+	return 0
 }

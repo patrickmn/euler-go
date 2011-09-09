@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func Euler026() {
+func Euler026() Result {
 	var (
 		strings = map[string]float64{}
 		one     = float64(1)
@@ -39,5 +39,5 @@ func Euler026() {
 		}
 		fmt.Println("str:", str, "recurring:", recurring)
 	}
-	fmt.Println(strings[longestRecurringString])
+	return strings[longestRecurringString]
 }

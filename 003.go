@@ -1,6 +1,6 @@
 package main
 
-func Euler003() {
+func Euler003() Result {
 	var (
 		factors = []int64{}
 		last    = int64(600851475143)
@@ -21,5 +21,5 @@ func Euler003() {
 			largest = v
 		}
 	}
-	result(largest)
+	return largest
 }

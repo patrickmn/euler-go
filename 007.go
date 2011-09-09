@@ -19,7 +19,7 @@ func FilterPrime(in <-chan int, out chan<- int, prime int) {
 	}
 }
 
-func Euler007b() {
+func Euler007b() Result {
 	var prime int
 	ch := make(chan int)
 	go Generate(ch)
@@ -29,19 +29,19 @@ func Euler007b() {
 		go FilterPrime(ch, ch1, prime)
 		ch = ch1
 	}
-	result(prime)
+	return prime
 }
 
 // Faster
-func Euler007() {
+func Euler007() Result {
 	numPrimes := 0
 	for i := int64(2); ; i++ {
 		if big.ProbablyPrime(big.NewInt(i), 4) {
 			numPrimes += 1
 			if numPrimes == 10001 {
-				result(i)
-				return
+				return i
 			}
 		}
 	}
+	return 0
 }

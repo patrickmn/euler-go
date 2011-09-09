@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-func Euler029() {
+func Euler029() Result {
 	nums := map[float64]bool{}
 	for a := float64(2); a <= 100; a++ {
 		for b := float64(2); b <= 100; b++ {
@@ -14,5 +14,5 @@ func Euler029() {
 			fmt.Println(a, b)
 		}
 	}
-	fmt.Println(len(nums))
+	return len(nums)
 }

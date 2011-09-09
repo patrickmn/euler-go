@@ -41,7 +41,7 @@ func FilterPalindrome(ch chan<- int, a int) {
 	wg.Done()
 }
 
-func Euler004b() {
+func Euler004b() Result {
 	var (
 		largest int
 		ch      = make(chan int, 100)
@@ -58,11 +58,11 @@ func Euler004b() {
 		}
 	}
 	wg.Wait()
-	result(largest)
+	return largest
 }
 
 // Solution 2
-func Euler004() {
+func Euler004() Result {
 	var (
 		largest     int
 		product     int
@@ -80,5 +80,5 @@ func Euler004() {
 			}
 		}
 	}
-	result(largest)
+	return largest
 }

@@ -23,7 +23,6 @@ const (
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48`
 )
 
-func Euler011() {
-	res := grid
-	result(res)
+func Euler011() Result {
+	return 0
 }

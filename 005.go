@@ -17,15 +17,15 @@ func tryDivision(num int) {
 	final = num
 }
 
-func Euler005b() {
+func Euler005b() Result {
 	for num := 20; ; num += 20 {
 		if final != 0 {
-			result(final)
-			return
+			return final
 		}
 		sem <- true
 		go tryDivision(num)
 	}
+	return 0
 }
 
 // Solution 2 - Faster
@@ -38,11 +38,11 @@ func canDivide(num int) bool {
 	return true
 }
 
-func Euler005() {
+func Euler005() Result {
 	for num := 20; ; num += 20 {
 		if canDivide(num) {
-			result(num)
-			return
+			return num
 		}
 	}
+	return 0
 }

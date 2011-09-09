@@ -15,7 +15,7 @@ func isPrime(num int64) bool {
 	return true
 }
 
-func Euler010() {
+func Euler010() Result {
 	num := int64(3)
 	primes = append(primes, 2)
 	for num < 2000000 {
@@ -24,10 +24,10 @@ func Euler010() {
 		}
 		num += 2
 	}
-	result(Sum64(primes))
+	return Sum64(primes)
 }
 
-func Euler010b() {
+func Euler010b() Result {
 	num := int64(3)
 	primes = append(primes, 2)
 	for num < 2000000 {
@@ -36,10 +36,10 @@ func Euler010b() {
 		}
 		num += 2
 	}
-	result(Sum64(primes))
+	return Sum64(primes)
 }
 
-func Euler010c() {
+func Euler010c() Result {
 	sum := 0
 	ch := make(chan int)
 	go Generate(ch)
@@ -50,5 +50,5 @@ func Euler010c() {
 		go FilterPrime(ch, ch1, prime)
 		ch = ch1
 	}
-	result(sum)
+	return sum
 }

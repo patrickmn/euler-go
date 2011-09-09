@@ -108,7 +108,7 @@ const (
 53503534226472524250874054075591789781264330331690`
 )
 
-func Euler013() {
+func Euler013() Result {
 	numStrings := strings.Split(numberString013, "\n", -1)
 	sum := float64(0)
 	for _, v := range numStrings {
@@ -116,5 +116,5 @@ func Euler013() {
 		sum += n
 	}
 	sumString := strconv.Ftoa64(sum, 'f', 10)
-	result(sumString[:10])
+	return sumString[:10]
 }

@@ -1,6 +1,6 @@
 package main
 
-func Euler002() {
+func Euler002() Result {
 	var (
 		a, b = 0, 1
 		sum  = 0
@@ -11,5 +11,5 @@ func Euler002() {
 		}
 		a, b = b, a+b
 	}
-	result(sum)
+	return sum
 }

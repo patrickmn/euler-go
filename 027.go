@@ -4,7 +4,7 @@ import (
 	"big"
 )
 
-func Euler027() {
+func Euler027() Result {
 	var maxConsecutive, maxConsecutiveA, maxConsecutiveB int64
 	for a := int64(-1000); a < 0; a++ {
 		for b := int64(0); b < 1000; b++ {
@@ -23,5 +23,5 @@ func Euler027() {
 		}
 	}
 	product := maxConsecutiveA * maxConsecutiveB
-	result(product)
+	return product
 }

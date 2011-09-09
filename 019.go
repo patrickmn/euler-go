@@ -24,7 +24,7 @@ func IsLeapYear(n int) bool {
 	return n%4 == 0
 }
 
-func Euler019() {
+func Euler019() Result {
 	// 1 Jan 1900 was a monday
 	y := 1900
 	m := 1
@@ -56,5 +56,5 @@ func Euler019() {
 			d++
 		}
 	}
-	result(sundaysOnFirst)
+	return sundaysOnFirst
 }

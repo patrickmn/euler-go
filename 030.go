@@ -5,15 +5,15 @@ import (
 	"strconv"
 )
 
-func Euler030() {
+func Euler030() Result {
 	const (
 		power float64 = 5
 	)
 	var (
-		can []int
-		sum float64
-		one int
-		str string
+		can    []int
+		sum    float64
+		one    int
+		str    string
 		sumStr string
 	)
 	for i := 10; i < 200000; i++ {
@@ -27,5 +27,5 @@ func Euler030() {
 			can = append(can, i)
 		}
 	}
-	result(Sum(can))
+	return Sum(can)
 }

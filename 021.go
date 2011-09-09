@@ -1,6 +1,6 @@
 package main
 
-func Euler021() {
+func Euler021() Result {
 	pairs := map[int]int{}
 	for i := 1; i < 10000; i++ {
 		dsum := Sum(Divisors(i))
@@ -16,5 +16,5 @@ func Euler021() {
 	for k, v := range pairs {
 		sum += k + v
 	}
-	result(sum)
+	return sum
 }

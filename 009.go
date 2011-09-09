@@ -24,6 +24,6 @@ func findTriplet(sum int) int {
 	return -1
 }
 
-func Euler009() {
-	result(findTriplet(1000))
+func Euler009() Result {
+	return findTriplet(1000)
 }

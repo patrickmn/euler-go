@@ -25,7 +25,7 @@ func GetAbundantNumbers() *[]int {
 	return &abundant
 }
 
-func Euler023() {
+func Euler023() Result {
 	var (
 		notSumOfTwo = []int{}
 		abundant    = GetAbundantNumbers()
@@ -36,5 +36,5 @@ func Euler023() {
 		}
 	}
 	sum := Sum(notSumOfTwo)
-	result(sum)
+	return sum
 }

@@ -69,7 +69,7 @@ func NumToWord(n int) string {
 	return str
 }
 
-func Euler017() {
+func Euler017() Result {
 	numLetters := 0
 	for i := 1; i < 1001; i++ {
 		word := NumToWord(i)
@@ -77,5 +77,5 @@ func Euler017() {
 		word = strings.Replace(word, "-", "", -1)
 		numLetters += len(word)
 	}
-	result(numLetters)
+	return numLetters
 }
