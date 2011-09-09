@@ -42,6 +42,7 @@ func main() {
 		"26": Euler026, // Not working
 		"27": Euler027,
 		"29": Euler029, // Not working
+		"30": Euler030,
 	}
 	showAnswer = func(k string) bool {
 		_, ok := funclist[k]
