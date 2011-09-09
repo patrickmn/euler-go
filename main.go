@@ -46,6 +46,7 @@ func main() {
 		"27": Euler027,
 		// "29": Euler029,
 		"30": Euler030,
+		"34": Euler034,
 	}
 	answers := map[string]string{
 		"1":  "233168",
@@ -78,6 +79,7 @@ func main() {
 		// "28":
 		"29": "9183",
 		"30": "443839",
+		"34": "40730",
 	}
 	showAnswer = func(k string) {
 		_, ok := solutionFuncs[k]
@@ -93,6 +95,8 @@ func main() {
 				if GetString(res) != realRes {
 					error = "FAIL"
 				}
+			} else {
+				error = "???"
 			}
 			extra := ""
 			if elapsedms > 5000 {
