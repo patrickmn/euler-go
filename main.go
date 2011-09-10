@@ -53,6 +53,7 @@ func main() {
 		"40":  Euler040,
 		"48":  Euler048,
 		"48b": Euler048b,
+		"52":  Euler052,
 	}
 	answers := map[string]string{
 		"1":  "233168",
@@ -91,6 +92,7 @@ func main() {
 		"37": "748317",
 		"40": "210",
 		"48": "9110846700",
+		"52": "142857",
 	}
 	showAnswer = func(k string) {
 		_, ok := solutionFuncs[k]
