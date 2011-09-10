@@ -7,7 +7,7 @@ import (
 )
 
 func GetString(a interface{}) string {
-        return fmt.Sprintf("%v", a)
+	return fmt.Sprintf("%v", a)
 }
 
 func Abs(n int) int {

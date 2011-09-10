@@ -6,7 +6,7 @@ import (
 )
 
 func IsCircularPrime(n int) bool {
-	if n % 2 == 0 && n > 2 {
+	if n%2 == 0 && n > 2 {
 		return false
 	}
 	ints := []byte{}

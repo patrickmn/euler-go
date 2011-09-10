@@ -11,7 +11,7 @@ var (
 
 // Solution 1
 func FilterPalindrome(ch chan<- int, a int) {
-	var product     int
+	var product int
 	for b := 999; b > 99; b-- {
 		product = a * b
 		if IsPalindrome(strconv.Itoa(product)) {
@@ -44,8 +44,8 @@ func Euler004b() Result {
 // Solution 2
 func Euler004() Result {
 	var (
-		largest     int
-		product     int
+		largest int
+		product int
 	)
 	for a := 999; a > 99; a-- {
 		for b := 999; b > 99; b-- {
