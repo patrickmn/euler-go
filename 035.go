@@ -6,6 +6,9 @@ import (
 )
 
 func IsCircularPrime(n int) bool {
+	if n % 2 == 0 && n > 2 {
+		return false
+	}
 	ints := []byte{}
 	str := strconv.Itoa(n)
 	for i := 0; i < len(str); i++ {
@@ -31,8 +34,8 @@ func IsCircularPrime(n int) bool {
 
 func Euler035() Result {
 	numCP := 0
-	for n := 1; n < 1000000; n++ {
-		if IsCircularPrime(n) {
+	for i := 1; i < 1000000; i++ {
+		if IsCircularPrime(i) {
 			numCP++
 		}
 	}
