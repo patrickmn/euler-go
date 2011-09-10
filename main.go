@@ -50,6 +50,7 @@ func main() {
 		"35":  Euler035,
 		"36":  Euler036,
 		"37":  Euler037,
+		// "38":  Euler038,
 		"40":  Euler040,
 		"48":  Euler048,
 		"48b": Euler048b,
@@ -97,11 +98,11 @@ func main() {
 		"55": "249",
 	}
 	showAnswer = func(k string) {
-		_, ok := solutionFuncs[k]
+		fn, ok := solutionFuncs[k]
 		if ok {
 			fmt.Printf("Problem %3s: ", k)
 			startTime := time.Nanoseconds()
-			res := solutionFuncs[k]()
+			res := fn()
 			endTime := time.Nanoseconds()
 			elapsedms := (endTime - startTime) / 1e6
 			error := ""
