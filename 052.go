@@ -5,16 +5,8 @@ import (
 )
 
 func ContainsSameDigits(a, b int) bool {
-	abytes := []byte{}
-	astr := strconv.Itoa(a)
-	for i := 0; i < len(astr); i++ {
-		abytes = append(abytes, astr[i])
-	}
-	bbytes := []byte{}
-	bstr := strconv.Itoa(b)
-	for i := 0; i < len(bstr); i++ {
-		bbytes = append(bbytes, bstr[i])
-	}
+	abytes := []byte(strconv.Itoa(a))
+	bbytes := []byte(strconv.Itoa(b))
 	for _, v := range abytes {
 		found := false
 		for _, ov := range bbytes {

@@ -112,11 +112,7 @@ func IsCircularPrime(n int) bool {
 	if n%2 == 0 && n > 2 {
 		return false
 	}
-	ints := []byte{}
-	str := strconv.Itoa(n)
-	for i := 0; i < len(str); i++ {
-		ints = append(ints, str[i])
-	}
+	ints := []byte(strconv.Itoa(n))
 	top := len(ints)
 	for oi := 0; oi < top; oi++ {
 		prev := ints[0]
