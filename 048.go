@@ -4,6 +4,7 @@ import (
 	"big"
 )
 
+// Faster
 func Euler048() Result {
 	acc := int64(0)
 	for i := int64(1); i < 1001; i++ {
