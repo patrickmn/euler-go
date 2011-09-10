@@ -51,6 +51,7 @@ func main() {
 		"36": Euler036,
 		"37": Euler037,
 		"48": Euler048,
+		"48b": Euler048b,
 	}
 	answers := map[string]string{
 		"1":  "233168",
