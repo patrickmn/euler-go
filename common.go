@@ -107,3 +107,23 @@ func SortedKeys(items map[string]interface{}) []string {
 	sort.SortStrings(keys)
 	return keys
 }
+
+func ReverseString(input string) string {
+	n := 0
+	rune := make([]int, len(input))
+	for _, r := range input {
+		rune[n] = r
+		n++
+	}
+	rune = rune[0:n]
+	for i := 0; i < n/2; i++ {
+		rune[i], rune[n-1-i] = rune[n-1-i], rune[i]
+	}
+	output := string(rune)
+	return output
+}
+
+func IsPalindrome(s string) bool {
+	rev := ReverseString(s)
+	return s == rev
+}

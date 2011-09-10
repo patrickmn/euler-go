@@ -31,5 +31,6 @@ GOFILES=\
 	030.go\
 	034.go\
 	035.go\
+	036.go\
 
 include $(GOROOT)/src/Make.cmd

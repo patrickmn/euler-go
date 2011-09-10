@@ -9,32 +9,12 @@ var (
 	wg *sync.WaitGroup
 )
 
-func ReverseString(input string) string {
-	n := 0
-	rune := make([]int, len(input))
-	for _, r := range input {
-		rune[n] = r
-		n++
-	}
-	rune = rune[0:n]
-	for i := 0; i < n/2; i++ {
-		rune[i], rune[n-1-i] = rune[n-1-i], rune[i]
-	}
-	output := string(rune)
-	return output
-}
-
 // Solution 1
 func FilterPalindrome(ch chan<- int, a int) {
-	var (
-		product     int
-		str, revstr string
-	)
+	var product     int
 	for b := 999; b > 99; b-- {
 		product = a * b
-		str = strconv.Itoa(product)
-		revstr = ReverseString(str)
-		if str == revstr {
+		if IsPalindrome(strconv.Itoa(product)) {
 			ch <- product
 		}
 	}
@@ -66,14 +46,11 @@ func Euler004() Result {
 	var (
 		largest     int
 		product     int
-		str, revstr string
 	)
 	for a := 999; a > 99; a-- {
 		for b := 999; b > 99; b-- {
 			product = a * b
-			str = strconv.Itoa(product)
-			revstr = ReverseString(str)
-			if str == revstr {
+			if IsPalindrome(strconv.Itoa(product)) {
 				if product > largest {
 					largest = product
 				}
