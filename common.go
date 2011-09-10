@@ -30,6 +30,20 @@ func Sum64(a []int64) int64 {
 	return sum
 }
 
+func ModPow(base, ex, modulo int64) int64 {
+	acc := int64(1)
+	ex--
+	for ex >= 0 {
+		acc *= base
+		acc %= modulo
+		if acc <= 0 {
+			return 0
+		}
+		ex--
+	}
+	return acc
+}
+
 func SumOfIntsInInt(n int) int {
 	str := strconv.Itoa(n)
 	sum := 0
