@@ -36,7 +36,7 @@ func Euler007b() Result {
 func Euler007() Result {
 	numPrimes := 0
 	for i := int64(2); ; i++ {
-		if big.ProbablyPrime(big.NewInt(i), 4) {
+		if big.ProbablyPrime(big.NewInt(i), 2) {
 			numPrimes += 1
 			if numPrimes == 10001 {
 				return i
