@@ -6,11 +6,11 @@ import (
 
 func ContainsSameDigits(a, b int) bool {
 	abytes := []byte{}
-	bbytes := []byte{}
 	astr := strconv.Itoa(a)
 	for i := 0; i < len(astr); i++ {
 		abytes = append(abytes, astr[i])
 	}
+	bbytes := []byte{}
 	bstr := strconv.Itoa(b)
 	for i := 0; i < len(bstr); i++ {
 		bbytes = append(bbytes, bstr[i])

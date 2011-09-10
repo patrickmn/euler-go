@@ -18,7 +18,7 @@ func Euler040() Result {
 	get := []int{1, 10, 100, 1000, 10000, 100000, 1000000}
 	sum := 1
 	for _, v := range get {
-		num, _ := strconv.Atoi(str[v-1:v])
+		num, _ := strconv.Atoi(str[v-1 : v])
 		sum *= num
 	}
 	return sum
