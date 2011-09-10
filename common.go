@@ -127,6 +127,20 @@ func IsTruncatablePrime(n int) bool {
 	}
 	str := strconv.Itoa(n)
 	for i := 0; i < len(str); i++ {
+		num, _ := strconv.Atoi(str[i:])
+		if !big.ProbablyPrime(big.NewInt(int64(num)), 1) {
+			return false
+		}
+	}
+	return true
+}
+
+func IsDoubleTruncatablePrime(n int) bool {
+	if n%2 == 0 && n > 2 {
+		return false
+	}
+	str := strconv.Itoa(n)
+	for i := 0; i < len(str); i++ {
 		left, _ := strconv.Atoi(str[i:])
 		right, _ := strconv.Atoi(str[:len(str)-i])
 		if !big.ProbablyPrime(big.NewInt(int64(left)), 1) || !big.ProbablyPrime(big.NewInt(int64(right)), 1) {

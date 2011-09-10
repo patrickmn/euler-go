@@ -5,7 +5,7 @@ func Euler037() Result {
 	count := 0
 	// 2, 3, 5, and 7 are not considered truncatable primes
 	for i := 11; ; i += 2 {
-		if IsTruncatablePrime(i) {
+		if IsDoubleTruncatablePrime(i) {
 			count++
 			sum += i
 			if count == 11 {
