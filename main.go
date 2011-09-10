@@ -45,12 +45,12 @@ func main() {
 		// "26": Euler026,
 		"27": Euler027,
 		// "29": Euler029,
-		"30": Euler030,
-		"34": Euler034,
-		"35": Euler035,
-		"36": Euler036,
-		"37": Euler037,
-		"48": Euler048,
+		"30":  Euler030,
+		"34":  Euler034,
+		"35":  Euler035,
+		"36":  Euler036,
+		"37":  Euler037,
+		"48":  Euler048,
 		"48b": Euler048b,
 	}
 	answers := map[string]string{

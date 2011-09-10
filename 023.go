@@ -27,14 +27,13 @@ func GetAbundantNumbers() *[]int {
 
 func Euler023() Result {
 	var (
-		notSumOfTwo = []int{}
-		abundant    = GetAbundantNumbers()
+		sum      = 0
+		abundant = GetAbundantNumbers()
 	)
 	for i := 1; i < 28124; i++ {
 		if !IsSumOfTwo(i, abundant) {
-			notSumOfTwo = append(notSumOfTwo, i)
+			sum += i
 		}
 	}
-	sum := Sum(notSumOfTwo)
 	return sum
 }
