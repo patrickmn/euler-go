@@ -44,27 +44,6 @@ func ModPow(base, ex, modulo int64) int64 {
 	return acc
 }
 
-func SumOfIntsInInt(n int) int {
-	str := strconv.Itoa(n)
-	sum := 0
-	for _, v := range str {
-		num, _ := strconv.Atoi(string(v))
-		sum += num
-	}
-	return sum
-}
-
-
-func SumOfIntsInFloat64(n float64) int {
-	str := strconv.Ftoa64(n, 'f', 0)
-	sum := 0
-	for _, v := range str {
-		num, _ := strconv.Atoi(string(v))
-		sum += num
-	}
-	return sum
-}
-
 func Factorial(n int) int {
 	if n <= 1 {
 		return 1
@@ -94,6 +73,45 @@ func Divisors(n int) []int {
 		}
 	}
 	return divisors
+}
+
+func SumOfIntsInInt(n int) int {
+	str := strconv.Itoa(n)
+	sum := 0
+	for _, v := range str {
+		num, _ := strconv.Atoi(string(v))
+		sum += num
+	}
+	return sum
+}
+
+
+func SumOfIntsInFloat64(n float64) int {
+	str := strconv.Ftoa64(n, 'f', 0)
+	sum := 0
+	for _, v := range str {
+		num, _ := strconv.Atoi(string(v))
+		sum += num
+	}
+	return sum
+}
+
+func ContainsSameDigits(a, b int) bool {
+	abytes := []byte(strconv.Itoa(a))
+	bbytes := []byte(strconv.Itoa(b))
+	for _, v := range abytes {
+		found := false
+		for _, ov := range bbytes {
+			if v == ov {
+				found = true
+				break
+			}
+		}
+		if !found {
+			return false
+		}
+	}
+	return true
 }
 
 func IsDeficient(n int) bool {
