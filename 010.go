@@ -16,15 +16,13 @@ func isPrime(num int64) bool {
 }
 
 func Euler010() Result {
-	num := int64(3)
-	primes = append(primes, 2)
-	for num < 2000000 {
-		if big.ProbablyPrime(big.NewInt(num), 4) {
-			primes = append(primes, num)
+	sum := int64(2) // 2 is a prime
+	for i := int64(3); i < 2000000; i += 2 {
+		if big.ProbablyPrime(big.NewInt(i), 4) {
+			sum += i
 		}
-		num += 2
 	}
-	return Sum64(primes)
+	return sum
 }
 
 func Euler010b() Result {
