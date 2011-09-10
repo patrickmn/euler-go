@@ -1,14 +1,11 @@
 package main
 
 import (
+	"big"
 	"fmt"
 	"sort"
 	"strconv"
 )
-
-func GetString(a interface{}) string {
-	return fmt.Sprintf("%v", a)
-}
 
 func Abs(n int) int {
 	if n > 0 {
@@ -97,6 +94,48 @@ func IsAbundant(n int) bool {
 	return Sum(Divisors(n)) > n
 }
 
+func IsCircularPrime(n int) bool {
+	if n%2 == 0 && n > 2 {
+		return false
+	}
+	ints := []byte{}
+	str := strconv.Itoa(n)
+	for i := 0; i < len(str); i++ {
+		ints = append(ints, str[i])
+	}
+	top := len(ints)
+	for oi := 0; oi < top; oi++ {
+		prev := ints[0]
+		for i := 0; i < top; i++ {
+			if i+1 < top {
+				prev, ints[i+1] = ints[i+1], prev
+			} else {
+				ints[0] = prev
+			}
+		}
+		num, _ := strconv.Atoi(string(ints))
+		if !big.ProbablyPrime(big.NewInt(int64(num)), 1) {
+			return false
+		}
+	}
+	return true
+}
+
+func IsTruncatablePrime(n int) bool {
+	if n%2 == 0 && n > 2 {
+		return false
+	}
+	str := strconv.Itoa(n)
+	for i := 0; i < len(str); i++ {
+		left, _ := strconv.Atoi(str[i:])
+		right, _ := strconv.Atoi(str[:len(str)-i])
+		if !big.ProbablyPrime(big.NewInt(int64(left)), 1) || !big.ProbablyPrime(big.NewInt(int64(right)), 1) {
+			return false
+		}
+	}
+	return true
+}
+
 func SortedKeys(items map[string]interface{}) []string {
 	keys := make([]string, len(items))
 	i := 0
@@ -106,6 +145,10 @@ func SortedKeys(items map[string]interface{}) []string {
 	}
 	sort.SortStrings(keys)
 	return keys
+}
+
+func GetString(a interface{}) string {
+	return fmt.Sprintf("%v", a)
 }
 
 func ReverseString(input string) string {
