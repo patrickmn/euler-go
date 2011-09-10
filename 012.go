@@ -3,7 +3,7 @@ package main
 func Over500Divisors(n int64) bool {
 	// The number itself is always a factor
 	numFactors := 1
-	for i := int64(1); i < int64(1000); i++ {
+	for i := int64(1); i < 1000; i++ {
 		if n%i == 0 {
 			numFactors++
 		}
