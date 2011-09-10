@@ -30,12 +30,12 @@ func Sum64(a []int64) int64 {
 	return sum
 }
 
-func ModPow(base, ex, modulo int64) int64 {
+func ModPow(base, ex, mod int64) int64 {
 	acc := int64(1)
 	ex--
 	for ex >= 0 {
 		acc *= base
-		acc %= modulo
+		acc %= mod
 		if acc <= 0 {
 			return 0
 		}
