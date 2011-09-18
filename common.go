@@ -85,7 +85,6 @@ func SumOfIntsInInt(n int) int {
 	return sum
 }
 
-
 func SumOfIntsInFloat64(n float64) int {
 	str := strconv.Ftoa64(n, 'f', 0)
 	sum := 0
@@ -185,7 +184,7 @@ func SortedKeys(items map[string]interface{}) []string {
 		keys[i] = key
 		i++
 	}
-	sort.SortStrings(keys)
+	sort.Strings(keys)
 	return keys
 }
 

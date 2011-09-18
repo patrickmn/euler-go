@@ -109,7 +109,7 @@ const (
 )
 
 func Euler013() Result {
-	numStrings := strings.Split(numberString013, "\n", -1)
+	numStrings := strings.Split(numberString013, "\n")
 	sum := float64(0)
 	for _, v := range numStrings {
 		n, _ := strconv.Atof64(v)
