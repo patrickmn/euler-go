@@ -32,8 +32,7 @@ func Sum64(a []int64) int64 {
 
 func ModPow(base, ex, mod int64) int64 {
 	acc := int64(1)
-	ex--
-	for ex >= 0 {
+	for ex > 0 {
 		acc *= base
 		acc %= mod
 		if acc <= 0 {

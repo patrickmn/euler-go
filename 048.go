@@ -16,9 +16,9 @@ func Euler048() Result {
 func Euler048b() Result {
 	sum := big.NewInt(0)
 	pow := big.NewInt(0)
-	var num *big.Int
-	for i := 1; i < 1001; i++ {
-		num = big.NewInt(int64(i))
+	num := big.NewInt(0)
+	for i := int64(1); i < 1001; i++ {
+		num.SetInt64(i)
 		pow.Exp(num, num, nil)
 		sum.Add(sum, pow)
 	}
