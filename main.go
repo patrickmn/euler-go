@@ -26,11 +26,13 @@ func main() {
 		"6":   Euler006,
 		"7":   Euler007,
 		"7b":  Euler007b,
+		"7c":  Euler007c,
 		"8":   Euler008,
 		"9":   Euler009,
 		"10":  Euler010,
 		"10b": Euler010b,
-		// "10c": Euler010c,
+		"10c": Euler010c,
+		// "10d": Euler010d,
 		// "11": Euler011,
 		"12": Euler012,
 		"13": Euler013,
@@ -101,10 +103,10 @@ func main() {
 		fn, ok := solutionFuncs[k]
 		if ok {
 			fmt.Printf("Problem %3s: ", k)
-			startTime := time.Nanoseconds()
+			startTime := time.Now()
 			res := fn()
-			endTime := time.Nanoseconds()
-			elapsedms := (endTime - startTime) / 1e6
+			endTime := time.Now()
+			elapsedms := (endTime.Sub(startTime)) / 1e6
 			error := ""
 			realRes, ok := answers[k]
 			if ok {

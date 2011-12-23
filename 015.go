@@ -10,5 +10,5 @@ func GridRoutes(n, m float64) float64 {
 
 func Euler015() Result {
 	possible := GridRoutes(20, 20)
-	return strconv.Ftoa64(possible, 'f', 0)
+	return strconv.FormatFloat(possible, 'f', 0, 64)
 }

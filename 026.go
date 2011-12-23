@@ -12,7 +12,7 @@ func Euler026() Result {
 	)
 	for i := float64(1); i < float64(1000); i++ {
 		frac := one / i
-		str := strconv.Ftoa64(frac, 'f', 100)
+		str := strconv.FormatFloat(frac, 'f', 100, 64)
 		strings[str] = i
 	}
 	//fmt.Println(strings)

@@ -1,7 +1,8 @@
 package main
 
 import (
-	"big"
+	"math/big"
+	primegen "github.com/jbarham/primegen.go"
 )
 
 func Generate(ch chan<- int) {
@@ -19,7 +20,7 @@ func FilterPrime(in <-chan int, out chan<- int, prime int) {
 	}
 }
 
-func Euler007b() Result {
+func Euler007c() Result {
 	var prime int
 	ch := make(chan int)
 	go Generate(ch)
@@ -33,7 +34,7 @@ func Euler007b() Result {
 }
 
 // Faster
-func Euler007() Result {
+func Euler007b() Result {
 	numPrimes := 0
 	for i := int64(2); ; i++ {
 		if big.ProbablyPrime(big.NewInt(i), 2) {
@@ -44,4 +45,13 @@ func Euler007() Result {
 		}
 	}
 	return 0
+}
+
+// Even faster
+func Euler007() Result {
+	sieve := primegen.New()
+	for i := 0; i < 10000; i++ {
+		sieve.Next()
+	}
+	return sieve.Next()
 }

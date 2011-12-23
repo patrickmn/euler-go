@@ -1,8 +1,8 @@
 package main
 
 import (
-	"big"
 	"fmt"
+	"math/big"
 	"sort"
 	"strconv"
 )
@@ -85,7 +85,7 @@ func SumOfIntsInInt(n int) int {
 }
 
 func SumOfIntsInFloat64(n float64) int {
-	str := strconv.Ftoa64(n, 'f', 0)
+	str := strconv.FormatFloat(n, 'f', 0, 64)
 	sum := 0
 	for _, v := range str {
 		num, _ := strconv.Atoi(string(v))
@@ -193,7 +193,7 @@ func GetString(a interface{}) string {
 
 func ReverseString(input string) string {
 	n := 0
-	rune := make([]int, len(input))
+	rune := make([]rune, len(input))
 	for _, r := range input {
 		rune[n] = r
 		n++

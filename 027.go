@@ -1,7 +1,7 @@
 package main
 
 import (
-	"big"
+	"math/big"
 )
 
 func Euler027() Result {

@@ -112,9 +112,9 @@ func Euler013() Result {
 	numStrings := strings.Split(numberString013, "\n")
 	sum := float64(0)
 	for _, v := range numStrings {
-		n, _ := strconv.Atof64(v)
+		n, _ := strconv.ParseFloat(v, 64)
 		sum += n
 	}
-	sumString := strconv.Ftoa64(sum, 'f', 10)
+	sumString := strconv.FormatFloat(sum, 'f', 10, 64)
 	return sumString[:10]
 }

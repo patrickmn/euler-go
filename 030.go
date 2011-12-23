@@ -23,7 +23,7 @@ func Euler030() Result {
 			one, _ = strconv.Atoi(string(v))
 			sum += math.Pow(float64(one), power)
 		}
-		if sumStr = strconv.Ftoa64(sum, 'f', 0); str == sumStr {
+		if sumStr = strconv.FormatFloat(sum, 'f', 0, 64); str == sumStr {
 			can = append(can, i)
 		}
 	}
