@@ -11,7 +11,7 @@ func Euler027() Result {
 			consecutive := int64(0)
 			for n := int64(0); n < 80; n++ {
 				num := (n * n) + (a * n) + b
-				if big.ProbablyPrime(big.NewInt(num), 1) {
+				if big.NewInt(num).ProbablyPrime(1) {
 					consecutive++
 				}
 			}

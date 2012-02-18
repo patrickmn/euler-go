@@ -140,7 +140,7 @@ func IsCircularPrime(n int) bool {
 			}
 		}
 		num, _ := strconv.Atoi(string(ints))
-		if !big.ProbablyPrime(big.NewInt(int64(num)), 1) {
+		if !big.NewInt(int64(num)).ProbablyPrime(1) {
 			return false
 		}
 	}
@@ -154,7 +154,7 @@ func IsTruncatablePrime(n int) bool {
 	str := strconv.Itoa(n)
 	for i := 0; i < len(str); i++ {
 		num, _ := strconv.Atoi(str[i:])
-		if !big.ProbablyPrime(big.NewInt(int64(num)), 1) {
+		if !big.NewInt(int64(num)).ProbablyPrime(1) {
 			return false
 		}
 	}
@@ -169,7 +169,7 @@ func IsDoubleTruncatablePrime(n int) bool {
 	for i := 0; i < len(str); i++ {
 		left, _ := strconv.Atoi(str[i:])
 		right, _ := strconv.Atoi(str[:len(str)-i])
-		if !big.ProbablyPrime(big.NewInt(int64(left)), 1) || !big.ProbablyPrime(big.NewInt(int64(right)), 1) {
+		if !big.NewInt(int64(left)).ProbablyPrime(1) || !big.NewInt(int64(right)).ProbablyPrime(1) {
 			return false
 		}
 	}

@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/jbarham/primegen.go"
 	"math/big"
-	primegen "github.com/jbarham/primegen.go"
 )
 
 func Generate(ch chan<- int) {
@@ -37,7 +37,7 @@ func Euler007c() Result {
 func Euler007b() Result {
 	numPrimes := 0
 	for i := int64(2); ; i++ {
-		if big.ProbablyPrime(big.NewInt(i), 2) {
+		if big.NewInt(i).ProbablyPrime(2) {
 			numPrimes += 1
 			if numPrimes == 10001 {
 				return i

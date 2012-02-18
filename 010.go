@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/jbarham/primegen.go"
 	"math/big"
-	primegen "github.com/jbarham/primegen.go"
 )
 
 var primes []int64
@@ -19,7 +19,7 @@ func isPrime(num int64) bool {
 func Euler010b() Result {
 	sum := int64(2) // 2 is a prime
 	for i := int64(3); i < 2000000; i += 2 {
-		if big.ProbablyPrime(big.NewInt(i), 4) {
+		if big.NewInt(i).ProbablyPrime(4) {
 			sum += i
 		}
 	}

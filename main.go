@@ -103,10 +103,9 @@ func main() {
 		fn, ok := solutionFuncs[k]
 		if ok {
 			fmt.Printf("Problem %3s: ", k)
-			startTime := time.Now()
+			start := time.Now()
 			res := fn()
-			endTime := time.Now()
-			elapsedms := (endTime.Sub(startTime)) / 1e6
+			dur := time.Since(start)
 			error := ""
 			realRes, ok := answers[k]
 			if ok {
@@ -117,10 +116,10 @@ func main() {
 				error = "???"
 			}
 			extra := ""
-			if elapsedms > 5000 {
+			if dur > 5*time.Second {
 				extra = "(!)"
 			}
-			fmt.Printf("%4s %12v in %d ms%s", error, res, elapsedms, extra)
+			fmt.Printf("%4s %12v in %v%s", error, res, dur, extra)
 			fmt.Println("")
 		}
 	}
