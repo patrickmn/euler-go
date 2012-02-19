@@ -8,9 +8,9 @@ func Euler055() Result {
 	isLychrel := func(n int64) bool {
 		cur := big.NewInt(n)
 		for i := 0; i < 50; i++ {
-			rev := big.NewInt(0)
+			rev := new(big.Int)
 			rev.SetString(ReverseString(cur.String()), 10)
-			sum := big.NewInt(0)
+			sum := new(big.Int)
 			sum.Add(cur, rev)
 			if IsPalindrome(sum.String()) {
 				return false

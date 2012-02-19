@@ -40,6 +40,7 @@ func main() {
 		"15": Euler015,
 		"16": Euler016,
 		"17": Euler017,
+		"18": Euler018,
 		"19": Euler019,
 		"20": Euler020,
 		"21": Euler021,
@@ -58,6 +59,7 @@ func main() {
 		"48b": Euler048b,
 		"52":  Euler052,
 		"55":  Euler055,
+		"67":  Euler067,
 	}
 	answers := map[string]string{
 		"1":  "233168",
@@ -77,7 +79,7 @@ func main() {
 		"15": "137846528820",
 		"16": "1366",
 		"17": "21124",
-		// "18":
+		"18": "1074",
 		"19": "171",
 		"20": "648",
 		"21": "31626",
@@ -98,6 +100,7 @@ func main() {
 		"48": "9110846700",
 		"52": "142857",
 		"55": "249",
+		"67": "7273",
 	}
 	showAnswer = func(k string) {
 		fn, ok := solutionFuncs[k]
@@ -109,7 +112,7 @@ func main() {
 			error := ""
 			realRes, ok := answers[k]
 			if ok {
-				if GetString(res) != realRes {
+				if fmt.Sprintf("%v", res) != realRes {
 					error = "FAIL"
 				}
 			} else {

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math/big"
 	"sort"
 	"strconv"
@@ -185,10 +184,6 @@ func SortedKeys(items map[string]interface{}) []string {
 	}
 	sort.Strings(keys)
 	return keys
-}
-
-func GetString(a interface{}) string {
-	return fmt.Sprintf("%v", a)
 }
 
 func ReverseString(input string) string {
