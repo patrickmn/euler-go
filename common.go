@@ -205,3 +205,18 @@ func IsPalindrome(s string) bool {
 	rev := ReverseString(s)
 	return s == rev
 }
+
+// Return the nth number in the Fibonacci sequence, where n of 1 is the
+// first number, 0.
+func Fib(n int) int64 {
+	if n < 2 {
+		return 0
+	} else if n == 2 {
+		return 1
+	}
+	var a, b int64 = 0, 1
+	for cur := 2; cur < n; cur++ {
+		a, b = b, a+b
+	}
+	return b
+}
